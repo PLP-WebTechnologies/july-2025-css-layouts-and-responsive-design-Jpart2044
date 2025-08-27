@@ -1,0 +1,135 @@
+/* -------------------------
+   Reset & Base Styles
+------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+/* -------------------------
+   Header & Navigation
+------------------------- */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------
+   Main Layout
+------------------------- */
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Main content + sidebar */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Grid Layout for Articles */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.grid-layout article {
+  background-color: #ddd;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Flexbox Cards Sidebar */
+.flex-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* -------------------------
+   Footer
+------------------------- */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* -------------------------
+   Responsive Media Queries
+------------------------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .grid-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .flex-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
